@@ -8,6 +8,9 @@ import mine from './modules/mine'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  state:{
+    token:"100"
+  },
   modules:{
     home,
     classify,

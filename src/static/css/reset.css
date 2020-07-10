@@ -1,0 +1,73 @@
+html,
+body,
+ul,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+img,
+input {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+	font-weight: normal;
+	font-size: 12px;
+}
+
+input {
+	outline: none;
+	border: none;
+}
+
+select {
+	outline: none;
+}
+
+li,
+ol {
+	list-style: none;
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}
+
+i,
+em {
+	font-style: normal;
+}
+
+button {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.clear_fix:after {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+}

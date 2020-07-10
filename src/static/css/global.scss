@@ -1,0 +1,92 @@
+//颜色变量数组 
+//文字颜色 class="color-theme" 
+//背景颜色 class="bg-color-theme" 
+$colors: (
+	theme: #b6954c, 
+	words:#696969
+);
+
+//获取文字颜色和背景颜色
+@each $label, $map in $colors {
+	.color-#{$label}{
+		color: #{$map}
+	}
+	.bg-color-#{$label}{
+		background-color: #{$map}
+	}
+}
+
+//边框相关 
+@function getColor($key) {
+	@return map-get($colors, $key);
+}
+.border-bottom{
+	border-bottom: .06rem solid getColor('words')
+}
+.border-right{
+	border-right: .06rem solid getColor('words')
+}
+
+//文字大小相关，注意书写的大小、间距都由这里循环得出，没匹配到的则不生效
+$sizes: 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 10, 20, 22, 24, 25, 26 ,28, 30;
+
+// 使用方式 class="fs-12"
+@each $item in $sizes {
+    .fs-#{$item}
+    {
+        font-size: #{$item}rem
+    }
+    .pl-#{$item}
+    {
+        padding-left: #{$item}rem
+    }
+    .pr-#{$item}
+    {
+        padding-right: #{$item}rem
+    }
+    .pt-#{$item}
+    {
+        padding-top: #{$item}rem
+    }
+    .pb-#{$item}
+    {
+        padding-bottom: #{$item}rem
+    }
+    .ml-#{$item}
+    {
+        margin-left: #{$item}rem
+    }
+    .mr-#{$item}
+    {
+        margin-right: #{$item}rem
+    }
+    .mt-#{$item}
+    {
+        margin-top: #{$item}rem
+    }
+    .mb-#{$item}
+    {
+        margin-bottom: #{$item}rem
+    }
+    .lh-#{$item}
+    {
+        line-height: #{$item}rem
+    }
+}
+
+.text-align-center{
+	text-align: center
+}
+.height-100h{
+	height: 100%;
+}
+.width-100w{
+	width: 100%;
+}
+
+//超出出现省略号
+.ell{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import state from '../store/index'
+import state from '@/store/index'
 import routerHome from './home'
 import routerClassify from './classify'
 import routerShoppingCar from './shoppingCar'
@@ -19,25 +19,21 @@ const routes = [
   }
 ]
 
-//路由拦截
-routes.beforeEach((to,from,next)=>{
-  const token = state.home.state.token;
-  if(to.mete.requireAuth){
-    if(token){
-      next();
-    }else{
-      next({
-        path:'/login',
-        query:{redirect:to.fullPath}
-      })
-    }
+const Router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
+
+
+/*????*/
+Router.beforeEach((to,from,next)=>{
+  const token = state.state.token;
+  if(to.meta.requireAuth){
+    token ? next() : next({name:"home"});
   }else{
     next();
   }
 })
 
-export default new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+export default Router;

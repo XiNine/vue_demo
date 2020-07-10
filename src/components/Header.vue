@@ -1,6 +1,6 @@
 <template>
   <header id="header">
-    <van-icon name="arrow-left" color="white" size="1.4rem" v-if="show"/>
+    <van-icon name="arrow-left" color="white" size="1.4rem" v-if="show" @click="$router.back()"/>
     <span class="center color-primary"><slot name="center"/></span>
     <span class="right"><slot name="right"/></span>
   </header>

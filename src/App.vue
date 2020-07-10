@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <Tabs/>
-    <router-view/>
+    <Tabs />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Tabs from '@/components/Tabs.vue'
-export default{
-  components:{
-    [Tabs.name]:Tabs
+import Tabs from "@/components/Tabs";
+export default {
+  components: {
+    Tabs
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import "../public/css/global.scss"
+@import "./static/css/global.scss";
+@import "./static/css/reset.css";
 </style>
-
