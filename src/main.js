@@ -4,9 +4,14 @@ import router from './router'
 import store from './store'
 import utils from './utils/index'
 
-Vue.use(utils)
+import 'amfe-flexible';
 
-Vue.config.productionTip = false
+Vue.prototype.$echarts = echarts;
+Vue.use(utils);
+Vue.use(Element);
+
+Vue.config.productionTip = false;
+
 new Vue({
   router,
   store,

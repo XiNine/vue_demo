@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1089675",
+      "name": "放大",
+      "font_class": "webicon311",
+      "unicode": "e6a2",
+      "unicode_decimal": 59042
+    }
+  ]
+}

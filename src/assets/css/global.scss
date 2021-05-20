@@ -1,0 +1,274 @@
+$theme:#00AAFF !important;
+
+/*文字/背景颜色*/
+$colors:(
+    blue:$theme,
+    hui:#ACB9BF,
+    hui1:#B2B2B2,
+    red:#FF597A,
+    yg:#00FFFF,
+    lv:#2BFF99,
+    white:#fff,
+    huang:#FFA61A,
+    cs:#FF7139,
+    test:#00e1ff,
+    try:#00b7ff
+);
+
+@each $label,$map in $colors {
+    .cr-#{$label}{ 
+        color:#{$map}
+    }
+    .cr-bg-#{$label}{
+        background-color:#{$map}
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.min_head{
+    color: #ccf2ff;
+    text-shadow: 0 0 4px rgba(204, 242, 255, 0.8);
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.width {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-left{
+    display: inline-block;
+    width: 10px;
+    height: 8px;
+    background: url('~@/assets/images/home/icon_time.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 位置样式 */
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.auto {
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+}
+
+/* 按钮 */
+.submitBtn {
+    height: 26px;
+    border: 1px solid $theme;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 8px $theme inset;
+    font-size: 14px;
+    padding: 2px 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #fff;
+    background: #103657;
+}
+
+.submitBtn:hover {
+    background: rgba(0,170,255, .3);
+}
+
+.minBtn{
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    box-shadow: 0px 0px 6px 2px rgba(0,170,255,.3) inset;
+    border: 1px solid $theme;
+    color: #fff;
+    font-weight: bold;
+    padding: 0 16px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* 公共外框样式 */
+.commonWrap {
+    position: absolute;
+    top: 100px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.min_popup{
+  width: 660px !important;
+  height: 760px !important;
+  background: url("~@/assets/images/common/popup_mbg.png") no-repeat !important;
+  background-size: 100% 100%;
+}
+.mains{
+    height: 100%;
+    position: relative;
+    .min_main{
+      height: 88%;
+      overflow: auto;
+      scroll-behavior: smooth;
+    }
+  }
+
+/* 遮罩 */
+.Mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 112;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/*动画样式*/
+.animate__fadeInLeftBig,
+.animate__backInLeft,
+.animate__fadeInUp,
+.animate__fadeOutDown {
+    animation-duration: 400ms
+}
+
+/*
+    快捷样式
+    文字大小相关，注意书写的大小、间距都由这里循环得出，没匹配到的则不生效
+    使用方式 class="fs-12"
+*/
+$sizes: 0,
+2,
+4,
+5,
+6,
+8,
+10,
+12,
+14,
+16,
+18,
+20,
+22,
+23,
+24,
+26,
+28,
+30,
+32,
+34,
+36,
+38,
+40,
+42,
+44,
+46,
+48,
+50,
+52,
+54,
+56,
+58,
+60,
+62,
+64,
+66,
+68,
+70,
+72;
+
+@each $item in $sizes {
+    .fs-#{$item} {
+        font-size: #{$item}px !important
+    }
+
+    .pl-#{$item} {
+        padding-left: #{$item}px !important
+    }
+
+    .pr-#{$item} {
+        padding-right: #{$item}px !important
+    }
+
+    .pt-#{$item} {
+        padding-top: #{$item}px !important
+    }
+
+    .pb-#{$item} {
+        padding-bottom: #{$item}px !important
+    }
+
+    .paddingT-#{$item} {
+        padding: #{$item}px 0 !important;
+    }
+
+    .paddingL-#{$item} {
+        padding: 0 #{$item}px !important;
+    }
+
+    .padding-#{$item} {
+        padding:#{$item}px !important;
+    }
+
+    .ml-#{$item} {
+        margin-left: #{$item}px !important
+    }
+
+    .mr-#{$item} {
+        margin-right: #{$item}px !important
+    }
+
+    .mt-#{$item} {
+        margin-top: #{$item}px !important
+    }
+
+    .mb-#{$item} {
+        margin-bottom: #{$item}px !important
+    }
+
+    .marginL-#{$item} {
+        margin: 0 #{$item}px !important;
+    }
+
+    .marginT-#{$item} {
+        margin: #{$item}px 0 !important;
+    }
+
+    .margin-#{$item} {
+        margin: #{$item}px !important;
+    }
+
+    .lh-#{$item} {
+        line-height: #{$item}px !important
+    }
+}

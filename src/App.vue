@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <Tabs />
-    <router-view />
+    <Tabs v-if="$route.meta.show" />
+    <transition
+      enter-active-class="animate__fadeInLeftBig"
+      leave-active-class="animate__fadeInRight"
+    >
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -15,6 +20,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./static/css/global.scss";
-@import "./static/css/reset.css";
+@import "./assets/css/reset.css";
+@import "./assets/css/iconfont.css";
+@import "./assets/css/element.css";
+@import "./assets/css/global.scss";
 </style>

@@ -2,9 +2,10 @@ const route = {
   path: '/shoppingCar',
   name: 'shoppingCar',
   component: () => import('@/views/shoppingCar'),
-  meta: {
-    requireAuth: true
-  }
+  meta:{
+    roles:['2'],
+    show:true
+   },
 }
 
 export default route;
